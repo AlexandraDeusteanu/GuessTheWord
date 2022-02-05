@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
+    </style>
+    <title>Guess the word</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="main-content">
+            <h1 id="guess-word">Guess the word</h1>
+            <p id="secret"></p>
+            <h2 id="guess">Pick a letter</h2>
+            <form id="form"><label for="letter"></label>
+                <input type="text" minlength="1" maxlength="1" id="letter" name="letter" required
+                    placeholder="Enter letter">
+                <button id="button">Check</button>
+            </form>
+
+            <div class="used">
+
+                <button id="reset">New game</button>
+            </div>
+        </div>
+        <div class="lives-status" id="lives-container">
+            <p id="words">Letters used:</p><span id="array"></span>
+            <div id="lives-left">
+                <p>Lives left:</p>
+                <p id="lives">3</p><span id="hearts">&hearts;</span>
+            </div>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
