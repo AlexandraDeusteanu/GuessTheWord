@@ -191,8 +191,10 @@ function guessAnswer() {
         return alphabet
 
     } else if (tries === 0) {
-        alert("Ai ramas fara vieti, jocul s-a terminat!")
+        alert(`Ai ramas fara vieti, jocul s-a terminat! Cuvantul a fost ${randomWord.join("")}`)
+        resetInput();
         newGame()
+       
     }
 
     return alphabet
@@ -207,7 +209,7 @@ function gameWin() {
     }
     if (values.every(checkFalseAndTried) === true) {
         alert(`Felicitari, ai castigat! Cuvantul a fost "${randomWord.join("")}"`)
-        newGame()
+        newGame();
     }
 }
 
@@ -225,7 +227,6 @@ form.addEventListener("submit", function (e) {
     console.log(alphabet)
     console.log(letter.value)
     console.log(word.innerText = letter.value)
-
     guessAnswer();
     cens();
     gameWin();
@@ -237,10 +238,10 @@ function newGame() {
     wrongLetters = [];
     rightLetters = [];
     lives.textContent = 3;
+    tries = 3;
     randomWord;
     array.innerText = "";
     console.log("hello");
-    letterList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     alphabet = {
         "b": false,
         "a": false,
@@ -275,6 +276,7 @@ function newGame() {
     console.log(randomWord)
     guessAnswer();
     cens();
+    gameWin();
 }
 reset.addEventListener("click", function () {
     newGame();
